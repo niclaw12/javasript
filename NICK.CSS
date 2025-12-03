@@ -1,0 +1,31 @@
+ body {
+      font-family: ALGERIAN;
+      background-color: #108ec9;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: rgb(214, 20, 140);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(203, 238, 7, 0.822);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 15px;
+      width: 100%;
+      background-color: green;
+      color: maroon;
+      border: none;
+      font-size: 16px;
+    }
+    #total {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 20px;
+    }

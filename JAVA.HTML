@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop Total Calculator</title>
+  <link rel="stylesheet" href="NICK.CSS">
+</head>
+<body>
+
+<div class="container">
+  <h1>Item Cost Calculator</h1>
+  <label>Bread (3,000 UGX):</label>
+  <input type="number" id="breadQuantity" placeholder="Enter quantity">
+  
+  <label>Milk (2,500 UGX):</label>
+  <input type="number" id="milkQuantity" placeholder="Enter quantity">
+  
+  <label>Eggs (500 UGX each):</label>
+  <input type="number" id="eggsQuantity" placeholder="Enter quantity">
+  
+  <button onclick="calculateTotal()">Calculate Total</button><div id="total"></div>
+</div>
+
+<script>
+  function calculateTotal() {
+    const breadPrice = 3000;
+    const milkPrice = 2500;
+    const eggPrice = 500;
+
+    let breadQuantity = document.getElementById("breadQuantity").value;
+    let milkQuantity = document.getElementById("milkQuantity").value;
+    let eggsQuantity = document.getElementById("eggsQuantity").value;
+
+    if (breadQuantity === "" || milkQuantity === "" || eggsQuantity === "") {
+      document.getElementById("total").innerText = "Please enter all quantities.";
+      return;
+    }
+
+    breadQuantity = Number(breadQuantity);
+    milkQuantity = Number(milkQuantity);
+    eggsQuantity = Number(eggsQuantity);
+
+    if (breadQuantity < 0 || milkQuantity < 0 || eggsQuantity < 0) {
+      document.getElementById("total").innerText = "Quantities cannot be negative.";
+      return;
+    }
+
+    if (isNaN(breadQuantity) || isNaN(milkQuantity) || isNaN(eggsQuantity)) {
+      document.getElementById("total").innerText = "Please enter valid numbers.";
+      return;
+    }
+
+    let totalCost = (breadQuantity * breadPrice) + (milkQuantity * milkPrice) + (eggsQuantity * eggPrice);
+    document.getElementById("total").innerText = "Total Payable: " + totalCost.toLocaleString() + " UGX";
+  }
+</script>
+
+</body>
+</html>
